@@ -1,0 +1,25 @@
+# Evaluation parameters for the GFM4D checkpoint.
+model: gfm4d
+model_name: gfm4d
+checkpoint: weights/gfm_4d.pth
+num_register_tokens: 4
+enable_warp2d_visibility: true
+chunk_size: 30000
+resize_input: true # Resize to process_res before GFM4D inference.
+scene_index: benchmark/scene_indices/all_scenes.json
+benchmark_root: ../SpatialBenchmark
+scene_id: null
+tags: sparse
+max_scenes: null
+eval_metrics: [depth, pose, trajectory]
+resolution: null
+depth_alignment: median
+process_res: 504
+patch_size: 14
+scale_value: 1.0
+use_amp: true
+amp_dtype: float16
+device: cuda
+output_dir: results/gfm4d
+output: null
+visualize: false

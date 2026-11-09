@@ -1,0 +1,7 @@
+# Architecture of the released GFM4D checkpoint.
+process_res: 504
+patch_size: 14
+num_register_tokens: 4
+enable_warp2d_visibility: true
+# Sparse queries per decode call; encoder features are reused across chunks.
+chunk_size: 2048

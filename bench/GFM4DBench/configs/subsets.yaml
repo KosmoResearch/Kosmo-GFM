@@ -1,0 +1,67 @@
+# GFM4DBench subset registry.
+#
+# The benchmark data package extracts to:
+#
+#   <GFM4D_DATA_ROOT>/
+#   ├── Tapvid3d_mini/
+#   │   └── Tapvid3d_mini_extracted/
+#   │       ├── adt_mini.json
+#   │       ├── pstudio_mini.json
+#   │       ├── po_mini.json
+#   │       ├── ds_mini.json
+#   │       ├── adt_mini/
+#   │       ├── pstudio_mini/
+#   │       ├── po_mini/
+#   │       └── ds_mini/
+#   └── SynthVerse/
+#       ├── synthverse_mini.json
+#       └── converted/
+#           ├── converted_subset50_64f_dynamic/  # trajectory arrays
+#           └── <sequence>/rgbs/
+#
+# Every path below is relative to ``--data-root``, which defaults to
+# ``bench/GFM4DBench/data/4dbenchmark_data`` in ``script/eval.sh``.
+#
+# ``reference_queries`` is the expected number of scored queries with the
+# default clip length (64). The runner warns when a run does not match it.
+
+subsets:
+  adt:
+    label: ADT
+    data_root: Tapvid3d_mini
+    json: Tapvid3d_mini/Tapvid3d_mini_extracted/adt_mini.json
+    coord_convention: opend4rt
+    reference_queries: 22187
+
+  pstudio:
+    label: PStudio
+    data_root: Tapvid3d_mini
+    json: Tapvid3d_mini/Tapvid3d_mini_extracted/pstudio_mini.json
+    coord_convention: opend4rt
+    reference_queries: 8720
+
+  po:
+    label: PO
+    data_root: Tapvid3d_mini
+    json: Tapvid3d_mini/Tapvid3d_mini_extracted/po_mini.json
+    coord_convention: opend4rt
+    reference_queries: 53465
+
+  ds:
+    label: DS
+    data_root: Tapvid3d_mini
+    json: Tapvid3d_mini/Tapvid3d_mini_extracted/ds_mini.json
+    coord_convention: opend4rt
+    reference_queries: 45149
+
+  # SynthVerse uses the PointOdyssey layout (global-world trajectories,
+  # camera-to-world extrinsics) and is reported separately from the TapVid3D
+  # average. Keep it out of ``--tapvid3d-subsets`` when building tables.
+  synthverse:
+    label: SynthVerse
+    data_root: .
+    json: SynthVerse/synthverse_mini.json
+    coord_convention: pointodyssey
+    dynamic_query_threshold: 0.01
+    reference_queries: 15762
+    reference_sequences: 49

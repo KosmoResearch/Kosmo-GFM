@@ -1,0 +1,9 @@
+# Runtime dependencies of the evaluation core.
+numpy>=1.23
+opencv-python-headless==4.11.0.86
+PyYAML>=6.0
+
+# Optional: live model inference needs the GFM package from the repository root.
+# Install it with: pip install -e ".[gfm]"
+# torch>=2.0
+# torchvision>=0.15

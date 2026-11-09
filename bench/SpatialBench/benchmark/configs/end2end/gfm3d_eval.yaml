@@ -1,0 +1,25 @@
+# Evaluation parameters for the GFM3D checkpoint.
+model: gfm3d
+model_name: gfm3d
+checkpoint: weights/gfm_3d.pth
+model_size: vitg
+num_register_tokens: 4
+use_camera_prompt: false
+resize_input: false # Reference adapter keeps dataset-reader resolution.
+scene_index: benchmark/scene_indices/all_scenes.json
+benchmark_root: ../SpatialBenchmark
+scene_id: null
+tags: sparse
+max_scenes: null
+eval_metrics: [depth, pose, trajectory]
+resolution: null
+depth_alignment: median
+process_res: 504
+patch_size: 14
+scale_value: 1.0
+use_amp: true
+amp_dtype: float16
+device: cuda
+output_dir: results/gfm3d
+output: null
+visualize: false

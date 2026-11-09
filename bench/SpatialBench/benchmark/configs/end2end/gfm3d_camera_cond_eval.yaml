@@ -1,0 +1,27 @@
+# Evaluation parameters for the camera-conditioned GFM3D checkpoint.
+model: gfm3d
+model_name: gfm3d_camera_cond
+checkpoint: weights/gfm_3d_camera_cond.pth
+model_size: vitg
+num_register_tokens: 4
+use_camera_prompt: true
+enable_metric: false
+resize_input: false
+camera_scale_mode: max
+scale_min: null # Reference has no 1.0 clamp; numerical floor is 1e-8.
+scene_index: benchmark/scene_indices/all_scenes.json
+benchmark_root: ../SpatialBenchmark
+scene_id: null
+tags: sparse
+max_scenes: null
+eval_metrics: [depth, pose, trajectory]
+resolution: null
+depth_alignment: median
+process_res: 504
+patch_size: 14
+use_amp: true
+amp_dtype: float16
+device: cuda
+output_dir: results/gfm3d_camera_cond
+output: null
+visualize: false

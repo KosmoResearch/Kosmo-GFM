@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gfm-inference"
+version = "0.1.0"
+description = "Inference for GFM, Camera Condition GFM, GFM 4D, and MVLoMA"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0 AND MIT AND BSD-3-Clause AND LicenseRef-VGGT"
+license-files = ["LICENSE", "NOTICE", "licenses/*.txt", "licenses/README.md"]
+dynamic = ["dependencies", "optional-dependencies"]
+
+[project.scripts]
+gfm-infer = "tools.infer_3d:main"
+gfm-camera-infer = "tools.infer_3d_camera_cond:main"
+gfm-4d-infer = "tools.infer_4d:main"
+gfm-3d-with-mvloma-infer = "tools.infer_3d_with_mvloma:main"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+optional-dependencies.export = {file = ["requirements-optional.txt"]}
+
+[tool.setuptools.packages.find]
+include = ["gfm", "gfm.*", "tools", "tools.*"]
+namespaces = false

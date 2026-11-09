@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gfm-eval4d"
+version = "0.1.0"
+description = "Dynamic Points and Scene Flow evaluation for the WorldTrack / TapVid3D benchmarks"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+keywords = [
+    "worldtrack",
+    "tapvid3d",
+    "dynamic-points",
+    "scene-flow",
+    "3d-tracking",
+    "evaluation",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+]
+
+dependencies = [
+    "numpy>=1.23",
+    "opencv-python-headless==4.11.0.86",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+# Live evaluation also requires the GFM package from the repository root.
+gfm = ["torch>=2.0", "torchvision>=0.15"]
+# Command-line helpers for downloading the released data and checkpoint.
+download = ["huggingface_hub>=0.23"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+gfm-4d-evaluate = "eval4d.cli.evaluate:main"
+gfm-4d-score = "eval4d.cli.score:main"
+gfm-4d-report = "eval4d.cli.report:main"
+
+[tool.setuptools.packages.find]
+include = ["eval4d*"]
+
+[tool.setuptools.package-data]
+eval4d = ["configs/*.yaml"]

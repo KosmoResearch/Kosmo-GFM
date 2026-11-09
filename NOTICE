@@ -1,0 +1,97 @@
+Kosmo-GFM
+
+Original Kosmo-GFM code is licensed under Apache-2.0; see LICENSE.
+The following third-party components retain their respective terms.
+These notices describe source attribution and do not replace the licenses.
+
+VGGT
+Source: https://github.com/facebookresearch/vggt
+Copyright (c) Meta Platforms, Inc. and affiliates. All rights reserved.
+License: licenses/VGGT-LICENSE.txt (v1, July 29, 2025)
+Files adapted for Kosmo-GFM inference:
+- gfm/models/heads/camera_head.py
+- gfm/models/heads/head_act.py
+- gfm/models/layers/__init__.py
+- gfm/models/layers/pos_embed.py
+- gfm/utils/pose_enc.py
+- gfm/utils/rotation.py
+
+Apache-2.0 files distributed within VGGT
+The upstream VGGT file headers explicitly retain Apache-2.0 for these
+DINOv2-derived layers, rather than the project-level VGGT license:
+- gfm/models/layers/attention.py
+- gfm/models/layers/block.py
+- gfm/models/layers/drop_path.py
+- gfm/models/layers/layer_scale.py
+- gfm/models/layers/mlp.py
+- gfm/models/layers/patch_embed.py
+- gfm/models/layers/swiglu_ffn.py
+Source: https://github.com/facebookresearch/vggt/tree/main/vggt/layers
+License text: LICENSE (Apache-2.0). Existing Meta copyright notices and
+DINO/timm references are retained.
+
+DINOv2
+Source: https://github.com/facebookresearch/dinov2
+Copyright (c) Meta Platforms, Inc. and affiliates.
+License: licenses/DINOv2-LICENSE.txt (Apache-2.0)
+Encoder implementation: gfm/models/aggregator.py. The original Apache-2.0
+notices in that file and gfm/models/layers/rope.py are retained.
+
+Depth Anything 3
+Source: https://github.com/ByteDance-Seed/Depth-Anything-3
+License: licenses/Depth-Anything-3-LICENSE.txt (Apache-2.0)
+The encoder in gfm/models/aggregator.py is adapted from DINOv2 and
+Depth Anything 3 for multi-view GFM inference. Its model configurations
+are used in gfm/models/gfm3d.py and gfm/models/gfm4d.py.
+The shared encoder also supplies features to MVLoMA.
+
+DPT building blocks (provenance review pending)
+Related upstream: https://github.com/isl-org/DPT/blob/main/dpt/blocks.py
+Copyright (c) 2021 Intel ISL (Intel Intelligent Systems Lab)
+Upstream license: licenses/DPT-LICENSE.txt (MIT)
+gfm/models/layers/conv_blocks.py (ResidualConvUnit) and
+gfm/models/heads/dpt_blocks.py (_make_scratch and feature fusion) share
+implementation with the DPT family, including subsequent VGGT adaptations.
+This notice preserves the DPT attribution; it does not establish the exact
+import source or remove any intermediate project's license obligations.
+Confirm the direct source and revision of these files and depth_head.py
+before release; see licenses/README.md.
+
+DeDoDe
+Source: https://github.com/Parskatt/DeDoDe
+Copyright (c) 2023 Johan Edstedt
+License: licenses/DeDoDe-LICENSE.txt (MIT)
+Adapted descriptor and detector components:
+gfm/models/match/loma/descriptor/dedode.py and the DeDoDe detector
+components in gfm/models/match/loma/detector/dad.py.
+
+DaD
+Source: https://github.com/Parskatt/DaD
+Copyright (c) 2025 Johan Edstedt
+License: licenses/DaD-LICENSE.txt (MIT)
+Adapted detector and keypoint sampling components:
+gfm/models/match/loma/detector/ and gfm/models/match/loma/geometry.py.
+
+LightGlue
+Source: https://github.com/cvg/LightGlue
+License: licenses/LightGlue-LICENSE.txt (Apache-2.0)
+Attention and assignment layers adapted in gfm/models/match/loma/loma.py;
+STAR matching adaptations are in gfm/models/heads/mvloma_head.py.
+
+PyTorch3D
+Source: https://github.com/facebookresearch/pytorch3d
+Copyright (c) Meta Platforms, Inc. and affiliates. All rights reserved.
+License: licenses/PyTorch3D-LICENSE.txt (BSD-3-Clause)
+The rotation conversion routines in gfm/utils/rotation.py retain their
+PyTorch3D attribution in addition to the VGGT adaptation notice.
+
+Benchmark packages (distributed separately from the gfm-inference wheel)
+- SpatialBench: https://github.com/Ropedia/SpatialBench
+  Adapted under bench/SpatialBench; see its LICENSE (CC-BY-4.0) and NOTICE.
+- Open-d4rt: https://github.com/Lijiaxin0111/Open-d4rt
+  WorldTrack evaluation protocol used through the reference 4d_eval library.
+  See bench/GFM4DBench/LICENSE (Apache-2.0) and NOTICE.
+  The exact reference 4d_eval source and revision remain to be confirmed.
+
+Runtime dependencies retain their own licenses. Separately distributed
+model weights and datasets are not licensed by this source-code notice.

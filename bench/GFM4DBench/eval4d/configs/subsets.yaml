@@ -1,0 +1,43 @@
+# GFM4DBench subset registry (packaged default).
+#
+# Keep this file identical to ``configs/subsets.yaml`` at the project root.
+# It is used when the package is installed and no project-level registry is
+# available. See the root registry for the data layout documentation.
+
+subsets:
+  adt:
+    label: ADT
+    data_root: Tapvid3d_mini
+    json: Tapvid3d_mini/Tapvid3d_mini_extracted/adt_mini.json
+    coord_convention: opend4rt
+    reference_queries: 22187
+
+  pstudio:
+    label: PStudio
+    data_root: Tapvid3d_mini
+    json: Tapvid3d_mini/Tapvid3d_mini_extracted/pstudio_mini.json
+    coord_convention: opend4rt
+    reference_queries: 8720
+
+  po:
+    label: PO
+    data_root: Tapvid3d_mini
+    json: Tapvid3d_mini/Tapvid3d_mini_extracted/po_mini.json
+    coord_convention: opend4rt
+    reference_queries: 53465
+
+  ds:
+    label: DS
+    data_root: Tapvid3d_mini
+    json: Tapvid3d_mini/Tapvid3d_mini_extracted/ds_mini.json
+    coord_convention: opend4rt
+    reference_queries: 45149
+
+  synthverse:
+    label: SynthVerse
+    data_root: .
+    json: SynthVerse/synthverse_mini.json
+    coord_convention: pointodyssey
+    dynamic_query_threshold: 0.01
+    reference_queries: 15762
+    reference_sequences: 49

@@ -1,0 +1,13 @@
+SpatialBench for Kosmo-GFM
+
+Source: https://github.com/Ropedia/SpatialBench
+Attribution: SpatialBench Authors
+Upstream license declaration:
+https://github.com/Ropedia/SpatialBench/blob/main/pyproject.toml
+License: CC-BY-4.0; see LICENSE or
+https://creativecommons.org/licenses/by/4.0/
+
+Modified for Kosmo-GFM: retained GFM3D/GFM4D evaluation, replaced model
+adapters with bundled implementations, and adapted configuration, launch
+scripts, result directories, and documentation. Existing source notices
+are retained. Model code and datasets retain their separate licenses.

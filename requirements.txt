@@ -1,0 +1,9 @@
+# Inference and evaluation dependencies. Install PyTorch for your GPU.
+torch>=2.4.1
+torchvision>=0.19.1
+numpy>=1.26
+pillow>=10.0
+einops>=0.8
+opencv-python-headless==4.11.0.86
+trimesh>=4.0
+evo

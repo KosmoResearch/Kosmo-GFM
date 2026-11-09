@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.env
+.env.*
+.pytest_cache/
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+outputs/
+predictions.npz
+matches.npz
+/tmp/
+*.ply
+*.glb
+
+# Local benchmark data, including dataset symlinks.
+/bench/SpatialBenchmark
+/bench/GFM4DBench/data/
+
+# Local benchmark reports and prediction caches.
+/bench/SpatialBench/results/
+/bench/GFM4DBench/results/

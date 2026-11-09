@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spatialbench-gfm"
+version = "0.1.0"
+description = "SpatialBench evaluation for bundled GFM3D and GFM4D models"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "CC-BY-4.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "SpatialBench Authors" }]
+dependencies = ["numpy", "torch", "torchvision", "einops", "opencv-python-headless==4.11.0.86", "Pillow", "PyYAML", "scipy", "evo"]
+
+[project.scripts]
+spatialbench-gfm = "benchmark.evaluation.run_benchmark:main"
+
+[tool.setuptools.packages.find]
+include = ["benchmark*"]
+
+[tool.setuptools.package-data]
+benchmark = ["configs/end2end/*.yaml", "scene_indices/*.json"]
