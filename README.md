@@ -100,6 +100,8 @@ For PLY/GLB output, install the optional dependencies and omit
 
 ## Model Cards
 
+All models currently support **pinhole cameras only**.
+
 All geometry models use a ViT-g backbone. Parameter counts are rounded for the
 provided checkpoints. ✅ indicates a supported capability; — indicates it is
 not part of that inference configuration.
