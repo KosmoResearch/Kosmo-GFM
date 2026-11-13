@@ -1,7 +1,7 @@
 <div align="center">
 <h1>Kosmo-GFM: A Production-Ready Geometry Foundation Model</h1>
 
-<a href="#citation" title="arXiv link coming soon; see citation"><img src="https://img.shields.io/badge/arXiv-Coming%20soon-b31b1b.svg" alt="arXiv: Coming soon"></a>
+<a href="https://arxiv.org/abs/2611.16840" title="Read the paper on arXiv"><img src="https://img.shields.io/badge/arXiv-2611.16840-b31b1b.svg" alt="arXiv: 2611.16840"></a>
 <a href="https://kosmoresearch.github.io/Kosmo-GFM/" title="Project page"><img src="https://img.shields.io/badge/Project-Page-blue.svg" alt="Project page"></a>
 <a href="https://huggingface.co/KosmoResearch/Kosmo-GFM" title="Models on Hugging Face"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Model-Hugging%20Face-yellow.svg" alt="Models on Hugging Face"></a>
 <a href="#license" title="Apache 2.0 for original code; third-party terms also apply"><img src="https://img.shields.io/badge/License-Apache%202.0%20%2B%20Third--party-green.svg" alt="License: Apache 2.0 plus third-party terms"></a>
@@ -188,7 +188,8 @@ Thanks to [VGGT](https://github.com/facebookresearch/vggt),
   title={{Kosmo-GFM}: A Production-Ready Geometry Foundation Model},
   author={{Kosmo Research}},
   institution={Kosmo Research},
-  year={2026}
+  year={2026},
+  url={https://arxiv.org/abs/2611.16840}
 }
 ```
 
